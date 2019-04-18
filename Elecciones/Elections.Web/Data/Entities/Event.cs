@@ -8,11 +8,12 @@ namespace Elections.Web.Data.Entities
     {
         
             public int Id { get; set; }
-
-            public string Name { get; set; }
+            [MaxLength(50)]
+        [Required]
+        public string Name { get; set; }
 
             [Display(Name = "Last Purchase")]
-            public DateTime LastPurchase { get; set; }
+            public DateTime? LastPurchase { get; set; }
           
 
             [Display(Name = "Is Availabe?")]
@@ -22,10 +23,10 @@ namespace Elections.Web.Data.Entities
             public double Stock { get; set; }
 
             public string Description { get; set; }
-
-            public DateTime StartDate { get; set; }
-
-            public DateTime EndDate { get; set; }
+        [Required]
+        public DateTime StartDate { get; set; }
+        [Required]
+        public DateTime EndDate { get; set; }
 
             public String Candidates { get; set; }
     }
